@@ -1,7 +1,16 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Home from '../../routes/Home/Home';
+import Dashboard from '../../routes/Dashboard/Dashboard';
 
 export default function App() {
-  return <div>TEST</div>;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/dashboard" component={Dashboard} />
+      </Switch>
+    </Router>
+  );
 }
