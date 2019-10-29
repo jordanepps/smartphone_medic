@@ -1,17 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 export default function MainLayout({ children }) {
   return (
     <>
-      <header>
-        LOGO
-        <nav>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/devices-for-sale">Devices For Sale</NavLink>
-          <NavLink to="/news">News</NavLink>
-        </nav>
-      </header>
+      <Header />
       {children}
       <footer>Footer</footer>
     </>
