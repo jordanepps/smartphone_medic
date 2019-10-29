@@ -13,6 +13,7 @@ export default function MainLayout({ children }) {
         </nav>
       </header>
       {children}
+      <footer>Footer</footer>
     </>
   );
 }

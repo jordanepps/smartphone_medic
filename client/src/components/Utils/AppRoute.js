@@ -6,7 +6,6 @@ export default function AppRoute({
   layout: Layout,
   ...rest
 }) {
-  console.log(Component);
   return (
     <Route
       {...rest}
