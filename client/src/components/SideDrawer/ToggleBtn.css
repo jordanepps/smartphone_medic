@@ -23,7 +23,7 @@
     border-radius: 4px;
 }
 
-@media(min-width: 769px) {
+@media(min-width: 571px) {
     .toggle {
         display: none;
     }
