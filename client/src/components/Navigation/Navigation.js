@@ -7,7 +7,9 @@ export default function Navigation() {
     <div className="main-nav">
       <nav>
         <ul>
-          <NavLink to="/about">About</NavLink>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
           <NavLink to="/devices-for-sale">Devices For Sale</NavLink>
           <NavLink to="/news">News</NavLink>
         </ul>
