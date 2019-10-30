@@ -8,14 +8,16 @@ import ToggleBtn from '../SideDrawer/ToggleBtn';
 export default function Header({ drawerHandler }) {
   return (
     <header className="main-header">
-      <div>
-        <ToggleBtn click={drawerHandler} />
+      <div className="main-header-container">
+        <div>
+          <ToggleBtn click={drawerHandler} />
+        </div>
+        <Link to="/" className="main-logo">
+          <img src={Logo} alt="Smartphone Medic Logo" />
+        </Link>
+        <div className="spacer" />
+        <Navigation />
       </div>
-      <Link to="/" className="main-logo">
-        <img src={Logo} alt="Smartphone Medic Logo" />
-      </Link>
-      <div className="spacer" />
-      <Navigation />
     </header>
   );
 }
