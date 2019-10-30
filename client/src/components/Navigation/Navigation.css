@@ -2,3 +2,9 @@
     text-decoration: none;
     padding: 0 10px;
 }
+
+@media(max-width:768px) {
+    .main-nav a {
+        display: none;
+    }
+}

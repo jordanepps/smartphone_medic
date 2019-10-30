@@ -13,16 +13,18 @@ import MainLayout from '../../layouts/MainLayout/MainLayout';
 export default function App() {
   return (
     <Router>
-      <Switch>
-        <AppRoute exact path="/" component={Home} layout={MainLayout} />
-        <AppRoute
-          path="/devices-for-sale"
-          component={Devices}
-          layout={MainLayout}
-        />
-        <AppRoute path="/news" component={News} layout={MainLayout} />
-        <Route path="/dashboard" component={Dashboard} />
-      </Switch>
+      <div className="app">
+        <Switch>
+          <AppRoute exact path="/" component={Home} layout={MainLayout} />
+          <AppRoute
+            path="/devices-for-sale"
+            component={Devices}
+            layout={MainLayout}
+          />
+          <AppRoute path="/news" component={News} layout={MainLayout} />
+          <Route path="/dashboard" component={Dashboard} />
+        </Switch>
+      </div>
     </Router>
   );
 }
