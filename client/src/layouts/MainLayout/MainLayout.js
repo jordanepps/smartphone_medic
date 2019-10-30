@@ -14,7 +14,7 @@ export default function MainLayout({ children }) {
   return (
     <>
       <Header drawerHandler={handleDrawerToggle} />
-      <SideDrawer show={sideDrawerOpen} />
+      <SideDrawer show={sideDrawerOpen} close={backdropClickHandler} />
       {sideDrawerOpen && <Backdrop click={backdropClickHandler} />}
       <main className="main-layout-container">{children}</main>
       <footer>Footer</footer>
