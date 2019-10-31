@@ -18,7 +18,7 @@ export default function MainLayout({ children }) {
       <SideDrawer show={sideDrawerOpen} close={backdropClickHandler} />
       {sideDrawerOpen && <Backdrop click={backdropClickHandler} />}
       <main className="main-layout-container">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -11,5 +11,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ededed;
   color: #444;
-  height: 100%;
+  /* height: 100%; */
 }
