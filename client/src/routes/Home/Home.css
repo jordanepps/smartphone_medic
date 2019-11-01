@@ -8,10 +8,6 @@
     background-size: cover;
 }
 
-.top-section img {
-    width: 100%;
-}
-
 .home-container h1 {
     margin-bottom: 85px;
     font-size: 40px;
@@ -26,4 +22,14 @@
     line-height: 25px;
     margin: auto;
     text-shadow: 0 1px 0 black;
+}
+
+@media(min-width: 571px) {
+    .top-section {
+        padding: 110px 15px;
+    }
+
+    .home-container h1 {
+        font-size: 55px;
+    }
 }

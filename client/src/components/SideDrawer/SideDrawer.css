@@ -18,6 +18,7 @@
 
 .side-drawer ul {
     margin: 45px 0;
+    padding-left: 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
