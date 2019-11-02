@@ -18,8 +18,8 @@
     border-bottom: 2px solid #e51337;
 }
 
-@media(max-width:570px) {
-    .main-nav a {
+@media(max-width:600px) {
+    .main-nav {
         display: none;
     }
 }

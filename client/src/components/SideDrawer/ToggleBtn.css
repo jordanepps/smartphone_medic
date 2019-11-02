@@ -9,6 +9,7 @@
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
+    position: absolute;
 
 }
 
@@ -23,7 +24,7 @@
     border-radius: 4px;
 }
 
-@media(min-width: 571px) {
+@media(min-width: 601px) {
     .toggle {
         display: none;
     }

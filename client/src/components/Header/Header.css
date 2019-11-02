@@ -1,6 +1,6 @@
 .main-header {
     padding: 15px;
-    width: 99%;
+    width: 100%;
     position: fixed;
     height: 50px;
     top: 0;
@@ -14,10 +14,11 @@
 }
 
 .main-header-container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .main-logo img {
@@ -28,13 +29,13 @@
     flex: 1;
 }
 
-@media(max-width:570px) {
+@media(max-width:600px) {
     .main-logo {
         margin: auto;
     }
 
     .main-logo img {
-        max-width: 220px;
+        max-width: 200px;
     }
 
     .spacer {

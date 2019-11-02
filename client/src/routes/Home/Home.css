@@ -29,7 +29,7 @@
     text-shadow: 0 1px 0 black;
 }
 
-@media(min-width: 571px) {
+@media(min-width: 601px) {
     .top-section {
         width: 100%;
         background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../imgs/home.jpg) center center;

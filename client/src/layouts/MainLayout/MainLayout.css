@@ -2,3 +2,9 @@
     max-width: 100%;
     margin: 80px auto 0;
 }
+
+@media(max-width: 600px) {
+    .main-layout-container {
+        margin: 68px auto 0;
+    }
+}
