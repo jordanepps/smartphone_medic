@@ -10,7 +10,9 @@ export default function Home() {
             Things happen. <br /> We can fix it.
           </h1>
           <span>
-            SmartPhone Medic is the smart choice for all of your repair needs
+            SmartPhone Medic is the smart choice for all of your repair needs.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            tenetur quidem sint itaque adipisci?
           </span>
         </div>
       </div>
