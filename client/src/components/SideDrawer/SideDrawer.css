@@ -8,7 +8,7 @@
     width: 70%;
     max-width: 400px;
     z-index: 200;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     transition: transform 0.3s ease-out;
 }
 
@@ -27,7 +27,6 @@
 
 .side-drawer ul a {
     margin: 18px 0;
-    /* width: 100%; */
     color: #444;
     font-weight: 500;
     text-decoration: none;

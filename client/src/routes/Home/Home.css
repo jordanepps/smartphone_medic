@@ -3,30 +3,35 @@
 }
 
 .top-section {
-    padding: 25px 15px 50px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../imgs/home.jpg) center center;
     background-size: cover;
 }
 
+.home-title {
+    text-align: center;
+}
+
 .home-title h1 {
-    margin-bottom: 85px;
+    padding-top: 35px;
+    margin: 0 auto 65px;
     font-size: 40px;
     font-family: 'Roboto Condensed', sans-serif;
     text-shadow: 0 1px 0 black;
-    text-align: center;
 }
 
 .home-title span {
     max-width: 335px;
     display: block;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 25px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 20px 0 35px;
     text-shadow: 0 1px 0 black;
 }
 
 @media(min-width: 571px) {
     .top-section {
+        width: 100%;
         background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../imgs/home.jpg) center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -37,10 +42,12 @@
         padding: 1px 10px;
         max-width: 1000px;
         margin: 50px auto;
+        text-align: left;
     }
 
     .home-title h1 {
         font-size: 55px;
+
     }
 
     .home-title span {
