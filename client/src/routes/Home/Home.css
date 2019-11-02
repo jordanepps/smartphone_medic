@@ -8,14 +8,15 @@
     background-size: cover;
 }
 
-.home-container h1 {
+.home-title h1 {
     margin-bottom: 85px;
     font-size: 40px;
     font-family: 'Roboto Condensed', sans-serif;
     text-shadow: 0 1px 0 black;
+    text-align: center;
 }
 
-.home-container span {
+.home-title span {
     max-width: 335px;
     display: block;
     font-size: 19px;
@@ -26,10 +27,26 @@
 
 @media(min-width: 571px) {
     .top-section {
-        padding: 110px 15px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../imgs/home.jpg) center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left 35% bottom 60%;
     }
 
-    .home-container h1 {
+    .home-title {
+        padding: 1px 10px;
+        max-width: 1000px;
+        margin: 50px auto;
+    }
+
+    .home-title h1 {
         font-size: 55px;
+    }
+
+    .home-title span {
+        margin: 0;
+        font-size: 24px;
+        max-width: 400px;
+        line-height: 35px;
     }
 }
