@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Email, Password, SubmitButton } from '../../components/Utils/Utils';
 
 export default function Login() {
@@ -9,6 +10,9 @@ export default function Login() {
         <Email />
         <Password />
         <SubmitButton value="log in" />
+        <div className="form-footer">
+          <Link>Forgot Password?</Link>
+        </div>
       </form>
     </div>
   );
