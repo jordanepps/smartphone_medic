@@ -1,9 +1,41 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Email, Password, SubmitButton } from '../../components/Utils/Utils';
+import {
+  TextInput,
+  Email,
+  Password,
+  VerifyPassword,
+  SubmitButton
+} from '../../components/Utils/Utils';
 import './SignupLogin.css';
 
-export default function Login() {
+function Signup() {
+  return (
+    <div className="display">
+      <TextInput value="Name" />
+      <Email />
+      <Password />
+      <VerifyPassword />
+      <SubmitButton value="sign up" />
+    </div>
+  );
+}
+
+function Login() {
+  return (
+    <div className="display">
+      <Email />
+      <Password />
+      <SubmitButton value="log in" />
+      <div className="form-footer">
+        {/* TODO:Place outline around forget Password */}
+        <Link>Forgot Password?</Link>
+      </div>
+    </div>
+  );
+}
+
+export default function TabContainer() {
   const [tabIsLogin, setTabIsLogin] = useState(true);
 
   const handleLoginSelect = () => setTabIsLogin(true);
@@ -28,15 +60,7 @@ export default function Login() {
             Login
           </h2>
         </div>
-        <div className="display">
-          <Email />
-          <Password />
-          <SubmitButton value="log in" />
-          <div className="form-footer">
-            {/* TODO:Place outline around forget Password */}
-            <Link>Forgot Password?</Link>
-          </div>
-        </div>
+        {tabIsLogin ? <Login /> : <Signup />}
       </form>
     </div>
   );

@@ -7,7 +7,7 @@ import Home from '../../routes/Home/Home';
 import Devices from '../../routes/Devices/Devices';
 // import Dashboard from '../../routes/Dashboard/Dashboard';
 import News from '../../routes/News/News';
-import Login from '../../routes/Login/Login';
+import TabContainer from '../../routes/SignupLogin/SignupLogin';
 //Layouts
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 
@@ -23,7 +23,7 @@ export default function App() {
             layout={MainLayout}
           />
           <AppRoute path="/news" component={News} layout={MainLayout} />
-          <Route path="/dashboard" component={Login} />
+          <Route path="/dashboard" component={TabContainer} />
         </Switch>
       </div>
     </Router>

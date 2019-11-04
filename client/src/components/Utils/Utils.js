@@ -1,6 +1,15 @@
 import React from 'react';
 import './Utils.css';
 
+export function TextInput({ value }) {
+  return (
+    <div className={`input-container ${value}`}>
+      <label htmlFor={value}>{value}:</label>
+      <input type="text" name={value} id={value} required />
+    </div>
+  );
+}
+
 export function Email() {
   return (
     <div className="input-container email">
