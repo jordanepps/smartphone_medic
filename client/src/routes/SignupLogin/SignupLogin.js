@@ -28,7 +28,6 @@ function Login() {
       <Password />
       <SubmitButton value="log in" />
       <div className="form-footer">
-        {/* TODO:Place outline around forget Password */}
         <Link>Forgot Password?</Link>
       </div>
     </div>

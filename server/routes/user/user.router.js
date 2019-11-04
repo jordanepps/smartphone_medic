@@ -21,7 +21,7 @@ userRouter.post('/', (req, res, next) => {
 
   if (passwordError) return res.status(400).json({ error: passwordError });
 
-  //Check if user email is allowed to register
+  //TODO:Check if user email is allowed to register
 
   //Check is email already exists
   User.findOne({ email }).then(user => {
