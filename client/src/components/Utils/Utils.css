@@ -7,7 +7,7 @@
     border-radius: 4px;
     text-align: center;
     background: white;
-    max-width: 600px;
+    max-width: 400px;
     margin: 100px auto;
     padding: 22px 10px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
@@ -15,4 +15,73 @@
 
 .dashboard-form h2 {
     margin-top: 0;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+
+}
+
+.input-container label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
+
+.input-container input {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #f6f6f6;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.input-container input:focus {
+    outline: none;
+    background-color: #fff;
+    border-bottom: 2px solid #e51337;
+}
+
+
+.btn-container.submit input {
+    background-color: #e51337;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(229, 19, 55, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(229, 19, 55, 0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    /* margin: 5px 20px 40px 20px; */
+    margin: 20px auto 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-container.submit input:hover,
+.btn-container.submit input:focus {
+    background-color: #d50024;
 }

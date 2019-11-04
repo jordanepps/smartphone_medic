@@ -8,7 +8,7 @@ export default function Login() {
         <h2>Login</h2>
         <Email />
         <Password />
-        <SubmitButton />
+        <SubmitButton value="log in" />
       </form>
     </div>
   );

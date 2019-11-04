@@ -48,35 +48,10 @@ export function VerifyPassword({ reset }) {
   );
 }
 
-export function SecondaryButton({ name, onClick }) {
-  return (
-    <button className="secondary-btn" onClick={onClick}>
-      {name}
-    </button>
-  );
-}
-
-export function Button({ name, onClick }) {
-  return (
-    <div className="btn-container">
-      <button onClick={onClick}>{name}</button>
-    </div>
-  );
-}
-
-export function SubmitButton({ name }) {
+export function SubmitButton({ value }) {
   return (
     <div className="btn-container submit">
-      <input type="submit" value={name} />
-    </div>
-  );
-}
-
-export function ModalButtons({ name, cancel, modalAction }) {
-  return (
-    <div className="modal-btn-container">
-      <span onClick={cancel}>Cancel</span>
-      <button onClick={modalAction}>{name}</button>
+      <input type="submit" value={value} />
     </div>
   );
 }
