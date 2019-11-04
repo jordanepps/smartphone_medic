@@ -1,0 +1,18 @@
+.dashboard-form-container {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.dashboard-form {
+    border-radius: 4px;
+    text-align: center;
+    background: white;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 22px 10px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-form h2 {
+    margin-top: 0;
+}
