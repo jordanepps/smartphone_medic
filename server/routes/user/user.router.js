@@ -19,6 +19,11 @@ userRouter.post('/', (req, res, next) => {
   const passwordError = UserService.validatePassword(password);
 
   if (passwordError) return res.status(400).json({ error: passwordError });
+
+  //Check if user email is allowed to register
+  //Check is email already exists
+  //Save user
+  //Send success flash
 });
 
 module.exports = userRouter;
