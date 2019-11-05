@@ -11,25 +11,25 @@ export default function TabContainer() {
 
   return (
     <div className="dashboard-form-container">
-      <form className="dashboard-form">
+      <div className="dashboard-form">
         <div className="tab-btn-container">
           <h2
             tabIndex={1}
-            class={`tab tab-signup ${!tabIsLogin && 'current-tab'}`}
+            className={`tab tab-signup ${!tabIsLogin && 'current-tab'}`}
             onClick={handleSignUpSelect}
           >
             Sign Up
           </h2>
           <h2
             tabIndex={1}
-            class={`tab tab-login ${tabIsLogin && 'current-tab'}`}
+            className={`tab tab-login ${tabIsLogin && 'current-tab'}`}
             onClick={handleLoginSelect}
           >
             Login
           </h2>
         </div>
         {tabIsLogin ? <Login /> : <Signup />}
-      </form>
+      </div>
     </div>
   );
 }
