@@ -1,38 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  TextInput,
-  Email,
-  Password,
-  VerifyPassword,
-  SubmitButton
-} from '../../components/Utils/Utils';
+import Login from '../../components/TabDisplay/Login';
+import Signup from '../../components/TabDisplay/Signup';
 import './SignupLogin.css';
-
-function Signup() {
-  return (
-    <div className="display">
-      <TextInput value="Name" />
-      <Email />
-      <Password />
-      <VerifyPassword />
-      <SubmitButton value="sign up" />
-    </div>
-  );
-}
-
-function Login() {
-  return (
-    <div className="display">
-      <Email />
-      <Password />
-      <SubmitButton value="log in" />
-      <div className="form-footer">
-        <Link>Forgot Password?</Link>
-      </div>
-    </div>
-  );
-}
 
 export default function TabContainer() {
   const [tabIsLogin, setTabIsLogin] = useState(true);
