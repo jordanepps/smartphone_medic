@@ -18,7 +18,7 @@ export default function TabContainer() {
 
   return (
     <>
-      {/* {flashMsg && <Flash message={flashMsg} />} */}
+      {flashMsg && <Flash message={flashMsg} />}
       <div className="dashboard-form-container">
         <div className="dashboard-form">
           <div className="tab-btn-container">
