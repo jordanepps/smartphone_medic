@@ -64,3 +64,7 @@ export function SubmitButton({ value }) {
     </div>
   );
 }
+
+export function Flash({ message }) {
+  return <div className="flash-message"></div>;
+}
