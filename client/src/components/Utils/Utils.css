@@ -101,3 +101,11 @@
 .btn-container.submit input:focus {
     background-color: #d50024;
 }
+
+.flash-message {
+    max-width: 300px;
+    margin: 20px auto 0;
+    border: 1px solid black;
+    display: flex;
+    text-align: center;
+}

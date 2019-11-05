@@ -16,9 +16,6 @@ export default function Signup({ signup }) {
         ? { name: name.value, email: email.value, password: password.value }
         : null
     );
-    // return validPasswords(password.value, verify_password.value)
-    //   ? { name: name.value }
-    //   : null;
   };
 
   const validPasswords = (password, verify) => password === verify;
