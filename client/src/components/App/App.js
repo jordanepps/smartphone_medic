@@ -10,6 +10,7 @@ import News from '../../routes/News/News';
 import TabContainer from '../../routes/SignupLogin/SignupLogin';
 //Layouts
 import MainLayout from '../../layouts/MainLayout/MainLayout';
+import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
 
 export default function App() {
   return (
@@ -23,7 +24,12 @@ export default function App() {
             layout={MainLayout}
           />
           <AppRoute path="/news" component={News} layout={MainLayout} />
-          <Route path="/dashboard" component={TabContainer} />
+          <AppRoute
+            path="/dashboard"
+            component={TabContainer}
+            layout={DashboardLayout}
+          />
+          {/* <Route path="/dashboard" component={TabContainer} /> */}
         </Switch>
       </div>
     </Router>
