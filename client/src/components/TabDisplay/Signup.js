@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   TextInput,
   Email,
@@ -6,23 +6,25 @@ import {
   VerifyPassword,
   SubmitButton
 } from '../Utils/Utils';
-import AuthApiService from '../../services/auth-api-service';
 
-export default function Signup() {
-  const [flashMsg, setFlashMsg] = useState(null);
-
-  const handleSignupSubmit = e => {
+export default function Signup({ signup }) {
+  const handleSignup = e => {
     e.preventDefault();
     const { name, email, password, verify_password } = e.target;
-    validatePasswords(password.value, verify_password.value);
-    //   AuthApiService.postUser(e);
+    signup(
+      validPasswords(password.value, verify_password.value)
+        ? { name: name.value, email: email.value, password: password.value }
+        : null
+    );
+    // return validPasswords(password.value, verify_password.value)
+    //   ? { name: name.value }
+    //   : null;
   };
 
-  const validatePasswords = (password, verify) =>
-    setFlashMsg(password === verify ? null : 'Passwords do not match');
+  const validPasswords = (password, verify) => password === verify;
 
   return (
-    <form className="display" onSubmit={handleSignupSubmit}>
+    <form className="display" onSubmit={handleSignup}>
       <TextInput value="name" />
       <Email />
       <Password />

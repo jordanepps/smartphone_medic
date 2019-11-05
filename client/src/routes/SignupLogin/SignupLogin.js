@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from '../../components/TabDisplay/Login';
 import Signup from '../../components/TabDisplay/Signup';
+// import AuthApiService from '../../services/auth-api-service';
 import './SignupLogin.css';
 
 export default function TabContainer() {
@@ -8,6 +9,10 @@ export default function TabContainer() {
 
   const handleLoginSelect = () => setTabIsLogin(true);
   const handleSignUpSelect = () => setTabIsLogin(false);
+
+  const handleSignupSubmit = data => {
+    console.log(data);
+  };
 
   return (
     <div className="dashboard-form-container">
@@ -28,7 +33,7 @@ export default function TabContainer() {
             Login
           </h2>
         </div>
-        {tabIsLogin ? <Login /> : <Signup />}
+        {tabIsLogin ? <Login /> : <Signup signup={handleSignupSubmit} />}
       </div>
     </div>
   );
