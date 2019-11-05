@@ -27,6 +27,7 @@ userRouter.post('/', (req, res, next) => {
   User.findOne({ email }).then(user => {
     if (user) {
       //user exists
+      res.locals.error_messages = req.flash('error_messages');
       return res.status(400).json({ error: 'Email is already registered' });
     } else {
       //Create new user

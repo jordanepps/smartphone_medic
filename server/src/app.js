@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const flash = require('connect-flash');
 
 const userRouter = require('../routes/user/user.router');
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(morgan('tiny'));
+app.use(flash());
 
 //Routes
 app.use('/api/users', userRouter);
