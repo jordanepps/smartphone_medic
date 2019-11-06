@@ -65,10 +65,10 @@ export function SubmitButton({ value }) {
   );
 }
 
-export function Flash({ message }) {
+export function Flash({ message, status }) {
   return (
     <div className="flash-container">
-      <div className="flash-message warning">
+      <div className={`flash-message ${status}`}>
         <p>{message}</p>
         <button>x</button>
       </div>
