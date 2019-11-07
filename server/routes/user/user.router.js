@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const UserService = require('./user.service');
 const User = require('../../models/user.model');
 
@@ -27,7 +29,7 @@ userRouter.post('/', (req, res, next) => {
   User.findOne({ email }).then(user => {
     if (user) {
       //user exists
-      res.locals.error_messages = req.flash('error_messages');
+      // res.locals.error_messages = req.flash('error_messages');
       return res.status(400).json({ error: 'Email is already registered' });
     } else {
       //Create new user
@@ -39,7 +41,21 @@ userRouter.post('/', (req, res, next) => {
       newUser
         .save()
         .then(user => {
-          return res.status(201).json({ registered: 'true' });
+          jwt.sign(
+            { id: user.id },
+            process.env.JWT_SECRET,
+            {
+              expiresIn: process.env.EXPIRY
+            },
+            (err, token) => {
+              //TODO: Handle error
+              if (err) throw err;
+              res.json({
+                token,
+                user: { id: user.id, name: user.name, email: user.email }
+              });
+            }
+          );
           //Send success flash
         })
         .catch(err => console.log(err));
