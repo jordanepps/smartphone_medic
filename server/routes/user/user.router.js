@@ -31,12 +31,10 @@ userRouter.post('/', (req, res, next) => {
       //user exists
       // res.locals.error_messages = req.flash('error_messages');
       req.flash('error', 'Email is already registered');
-      return res
-        .status(400)
-        .json({
-          error: 'Email is already registered',
-          msg: req.flash('error')
-        });
+      return res.status(400).json({
+        error: 'Email is already registered',
+        msg: req.flash('error')
+      });
     } else {
       //Create new user
       const newUser = new User({ ...newUserData });
@@ -57,7 +55,7 @@ userRouter.post('/', (req, res, next) => {
               //TODO: Handle error
               if (err) throw err;
               req.flash('success', 'Registered Successfully!');
-              res.json({
+              res.status(201).json({
                 token,
                 user: { id: user.id, name: user.name, email: user.email }
               });

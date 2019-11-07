@@ -16,8 +16,13 @@ export default function TabContainer() {
   const handleSignupSubmit = data => {
     if (!data) return handleFlash('Passwords do not match', 'danger');
     AuthApiService.postUser(data)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .then(res => {
+        if (res.status !== 201) {
+          handleFlash(res.data.msg[0], 'danger');
+        }
+        console.log(res);
+      })
+      .catch(err => console.log('ERR!', err.data.msg));
   };
 
   const handleFlash = (msg, status) => {
