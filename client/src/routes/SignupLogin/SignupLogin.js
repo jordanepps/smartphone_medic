@@ -32,6 +32,10 @@ export default function TabContainer() {
   const handleFlash = (msg, status) => {
     setFlashMsg(msg);
     setStatus(status);
+    setTimeout(() => {
+      setStatus(null);
+      setStatus(null);
+    }, 4000);
   };
 
   return (
