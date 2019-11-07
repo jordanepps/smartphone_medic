@@ -2,23 +2,32 @@ import React, { useState } from 'react';
 import Login from '../../components/TabDisplay/Login';
 import Signup from '../../components/TabDisplay/Signup';
 import { Flash } from '../../components/Utils/Utils';
-// import AuthApiService from '../../services/auth-api-service';
+import AuthApiService from '../../services/auth-api-service';
 import './SignupLogin.css';
 
 export default function TabContainer() {
   const [tabIsLogin, setTabIsLogin] = useState(true);
-  const [flashMsg, setFlashMsg] = useState('This is a test flash message');
+  const [flashMsg, setFlashMsg] = useState(null);
+  const [flashStatus, setStatus] = useState(null);
 
   const handleLoginSelect = () => setTabIsLogin(true);
   const handleSignUpSelect = () => setTabIsLogin(false);
 
   const handleSignupSubmit = data => {
-    !data && setFlashMsg('Passwords do not match');
+    if (!data) return handleFlash('Passwords do not match', 'danger');
+    AuthApiService.postUser(data)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
+  const handleFlash = (msg, status) => {
+    setFlashMsg(msg);
+    setStatus(status);
   };
 
   return (
     <>
-      {flashMsg && <Flash message={flashMsg} status="danger" />}
+      <Flash message={flashMsg} status={flashStatus} />
       <div className="dashboard-form-container">
         <div className="dashboard-form">
           <div className="tab-btn-container">

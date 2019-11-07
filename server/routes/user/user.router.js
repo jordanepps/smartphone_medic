@@ -30,7 +30,13 @@ userRouter.post('/', (req, res, next) => {
     if (user) {
       //user exists
       // res.locals.error_messages = req.flash('error_messages');
-      return res.status(400).json({ error: 'Email is already registered' });
+      req.flash('error', 'Email is already registered');
+      return res
+        .status(400)
+        .json({
+          error: 'Email is already registered',
+          msg: req.flash('error')
+        });
     } else {
       //Create new user
       const newUser = new User({ ...newUserData });

@@ -168,3 +168,7 @@
 .flash-message.danger button {
     color: #a94442;
 }
+
+.flash-message.null {
+    display: none;
+}
