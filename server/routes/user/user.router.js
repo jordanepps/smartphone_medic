@@ -21,7 +21,12 @@ userRouter.post('/', (req, res, next) => {
   //length, empty spaces, casing, etc...
   const passwordError = UserService.validatePassword(password);
 
-  if (passwordError) return res.status(400).json({ error: passwordError });
+  if (passwordError) {
+    req.flash('error', passwordError);
+    return res
+      .status(400)
+      .json({ error: passwordError, msg: req.flash('error') });
+  }
 
   //TODO:Check if user email is allowed to register
 
