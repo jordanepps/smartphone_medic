@@ -50,13 +50,13 @@ userRouter.post('/', (req, res, next) => {
             (err, token) => {
               //TODO: Handle error
               if (err) throw err;
+              req.flash('success', 'Registered Successfully!');
               res.json({
                 token,
                 user: { id: user.id, name: user.name, email: user.email }
               });
             }
           );
-          //Send success flash
         })
         .catch(err => console.log(err));
     }
