@@ -2,25 +2,8 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/;
-
+//TODO:Refactor to single function if no other methods are needed
 const UserService = {
-  signUser(res, user) {
-    jwt.sign(
-      { id: user.id },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: process.env.EXPIRY
-      },
-      (err, token) => {
-        throw err;
-        // if (err) throw err;
-        // res.json({
-        //   token,
-        //   user: { id: user.id, name: user.name, email: user.email }
-        // });
-      }
-    );
-  },
   validatePassword(password) {
     if (password.length < 8) {
       return 'Password must be longer than 8 characters';

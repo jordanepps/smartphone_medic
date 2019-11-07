@@ -17,10 +17,14 @@ export default function TabContainer() {
     if (!data) return handleFlash('Passwords do not match', 'danger');
     AuthApiService.postUser(data)
       .then(res => {
+        //TODO: get flash status value from backend
         if (res.status !== 201) {
           handleFlash(res.data.msg[0], 'danger');
+        } else {
+          handleLoginSelect();
+          handleFlash(res.data.msg[0], 'success');
+          console.log(res);
         }
-        console.log(res);
       })
       .catch(err => console.log('ERR!', err.data.msg));
   };

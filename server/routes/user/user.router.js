@@ -62,7 +62,8 @@ userRouter.post('/', (req, res, next) => {
               req.flash('success', 'Registered Successfully!');
               res.status(201).json({
                 token,
-                user: { id: user.id, name: user.name, email: user.email }
+                user: { id: user.id, name: user.name, email: user.email },
+                msg: req.flash('success')
               });
             }
           );
