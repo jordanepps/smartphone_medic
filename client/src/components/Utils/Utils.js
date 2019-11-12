@@ -65,12 +65,13 @@ export function SubmitButton({ value }) {
   );
 }
 
-export function Flash({ message, status }) {
+export function Flash({ message, status, close }) {
+  // const tester = () => console.log('test');
   return (
     <div className="flash-container">
       <div className={`flash-message ${status}`}>
         <p>{message}</p>
-        <button>x</button>
+        <button onClick={() => close(0)}>x</button>
       </div>
     </div>
   );

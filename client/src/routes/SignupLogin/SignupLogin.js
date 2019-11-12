@@ -32,15 +32,18 @@ export default function TabContainer() {
   const handleFlash = (msg, status) => {
     setFlashMsg(msg);
     setStatus(status);
+    closeFlash();
+  };
+
+  const closeFlash = (time = 4000) => {
     setTimeout(() => {
       setStatus(null);
-      setStatus(null);
-    }, 4000);
+    }, time);
   };
 
   return (
     <>
-      <Flash message={flashMsg} status={flashStatus} />
+      <Flash message={flashMsg} status={flashStatus} close={closeFlash} />
       <div className="dashboard-form-container">
         <div className="dashboard-form">
           <div className="tab-btn-container">

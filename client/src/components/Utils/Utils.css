@@ -140,6 +140,7 @@
     right: 5px;
     top: 25%;
     color: inherit;
+    cursor: pointer;
 }
 
 .flash-message.success {
