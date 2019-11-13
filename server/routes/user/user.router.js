@@ -8,7 +8,7 @@ const userRouter = express.Router();
 
 userRouter.post('/', (req, res, next) => {
   const { name, email, password } = req.body;
-  const newUserData = { name, email, password };
+  const newUserData = { email: email.toLowerCase(), name, password };
 
   //Check for required fields in request body
   for (const [key, value] of Object.entries(newUserData))
