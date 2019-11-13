@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 const userRouter = require('../routes/user/user.router');
+const authRouter = require('../routes/auth/auth.router');
 
 const app = express();
 let sess = {
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 
 //Routes
 app.use('/api/users', userRouter);
+app.use('/api/auth', authRouter);
 
 app.use((error, req, res, next) =>
   res.status(500).json({ message: error.message, error })
