@@ -8,7 +8,7 @@ export default function Login({ login }) {
     const { email, password } = e.target;
     login({ email: email.value, password: password.value });
   };
-
+  //TODO:Handle forget password
   return (
     <form className="display" onSubmit={handleLogin}>
       <Email />

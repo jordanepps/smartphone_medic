@@ -21,7 +21,12 @@ authRouter.post('/', (req, res, next) => {
 
     //Check if account is deleted
     //Check password
-    console.log(User.validPassword);
+    if (user.validPassword(password)) {
+      console.log('password match');
+    } else {
+      return res.status(400).json({ error: 'Password is incorrect' });
+    }
+
     //verify user
 
     res.status(200).json(loginData);
