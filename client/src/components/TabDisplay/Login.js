@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Email, Password, SubmitButton } from '../Utils/Utils';
 
-export default function Login() {
+export default function Login({ login }) {
   const handleLogin = e => {
     e.preventDefault();
     const { email, password } = e.target;
-    console.log(email.value, password.value);
+    login({ email: email.value, password: password.value });
   };
 
   return (

@@ -29,6 +29,12 @@ export default function TabContainer() {
       .catch(err => console.log('ERR!', err.data.msg));
   };
 
+  const handleLoginSubmit = data => {
+    AuthApiService.loginUser(data)
+      .then(res => console.log(res, 'RES'))
+      .catch(err => console.log(err, 'ERR'));
+  };
+
   const handleFlash = (msg, status) => {
     setFlashMsg(msg);
     setStatus(status);
@@ -62,7 +68,11 @@ export default function TabContainer() {
               Login
             </h2>
           </div>
-          {tabIsLogin ? <Login /> : <Signup signUp={handleSignupSubmit} />}
+          {tabIsLogin ? (
+            <Login login={handleLoginSubmit} />
+          ) : (
+            <Signup signUp={handleSignupSubmit} />
+          )}
         </div>
       </div>
     </>

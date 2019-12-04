@@ -8,6 +8,12 @@ const AuthApiService = {
       .post(`${endpoint}/users`, { ...data })
       .then(res => res)
       .catch(err => err.response);
+  },
+  loginUser(data) {
+    return axios
+      .post(`${endpoint}/auth`, { ...data })
+      .then(res => res)
+      .catch(err => err.response);
   }
 };
 
