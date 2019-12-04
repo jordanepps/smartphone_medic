@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const endpoint = 'http://localhost:8000/api';
-
+//TODO: throw proper error
 const AuthApiService = {
   postUser(data) {
     return axios
