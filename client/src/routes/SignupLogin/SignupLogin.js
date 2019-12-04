@@ -62,7 +62,7 @@ export default function TabContainer() {
               Login
             </h2>
           </div>
-          {tabIsLogin ? <Login /> : <Signup signup={handleSignupSubmit} />}
+          {tabIsLogin ? <Login /> : <Signup signUp={handleSignupSubmit} />}
         </div>
       </div>
     </>

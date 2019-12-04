@@ -7,11 +7,11 @@ import {
   SubmitButton
 } from '../Utils/Utils';
 
-export default function Signup({ signup }) {
-  const handleSignup = e => {
+export default function Signup({ signUp }) {
+  const handleSignUp = e => {
     e.preventDefault();
     const { name, email, password, verify_password } = e.target;
-    signup(
+    signUp(
       validPasswords(password.value, verify_password.value)
         ? { name: name.value, email: email.value, password: password.value }
         : null
@@ -21,7 +21,7 @@ export default function Signup({ signup }) {
   const validPasswords = (password, verify) => password === verify;
 
   return (
-    <form className="display" onSubmit={handleSignup}>
+    <form className="display" onSubmit={handleSignUp}>
       <TextInput value="name" />
       <Email />
       <Password />
