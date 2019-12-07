@@ -6,7 +6,7 @@ import AuthApiService from '../../services/auth-api-service';
 import TokenService from '../../services/token-service';
 import './SignupLogin.css';
 
-export default function TabContainer() {
+export default function TabContainer({ history }) {
   const [tabIsLogin, setTabIsLogin] = useState(true);
   const [flashMsg, setFlashMsg] = useState(null);
   const [flashStatus, setStatus] = useState(null);
@@ -37,8 +37,8 @@ export default function TabContainer() {
         if (status >= 400) {
           handleFlash(data.error, 'danger');
         } else {
-          console.log(res);
           TokenService.saveAuthToken(data.token);
+          history.push('/dashboard');
         }
       })
       .catch(err => console.log(err, 'ERR'));

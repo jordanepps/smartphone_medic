@@ -5,10 +5,11 @@ import './App.css';
 //Routes
 import Home from '../../routes/Home/Home';
 import Devices from '../../routes/Devices/Devices';
-// import Dashboard from '../../routes/Dashboard/Dashboard';
+import Dashboard from '../../routes/Dashboard/Dashboard';
 import News from '../../routes/News/News';
 import TabContainer from '../../routes/SignupLogin/SignupLogin';
 import PublicOnlyRoute from '../Utils/PublicRouteOnly';
+import PrivateRoute from '../Utils/PrivateRoute';
 //Layouts
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
@@ -27,16 +28,15 @@ export default function App() {
           <AppRoute path="/news" component={News} layout={MainLayout} />
           <PublicOnlyRoute
             exact
-            path="dashbaord/auth"
+            path="/dashboard/auth"
             component={TabContainer}
             layout={DashboardLayout}
           />
-          {/* <AppRoute
+          <PrivateRoute
             path="/dashboard"
-            component={TabContainer}
+            component={Dashboard}
             layout={DashboardLayout}
-          /> */}
-          {/* <Route path="/dashboard" component={TabContainer} /> */}
+          />
         </Switch>
       </div>
     </Router>
