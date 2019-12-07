@@ -8,6 +8,7 @@ import Devices from '../../routes/Devices/Devices';
 // import Dashboard from '../../routes/Dashboard/Dashboard';
 import News from '../../routes/News/News';
 import TabContainer from '../../routes/SignupLogin/SignupLogin';
+import PublicOnlyRoute from '../Utils/PublicRouteOnly';
 //Layouts
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
@@ -24,11 +25,17 @@ export default function App() {
             layout={MainLayout}
           />
           <AppRoute path="/news" component={News} layout={MainLayout} />
-          <AppRoute
-            path="/dashboard"
+          <PublicOnlyRoute
+            exact
+            path="dashbaord/auth"
             component={TabContainer}
             layout={DashboardLayout}
           />
+          {/* <AppRoute
+            path="/dashboard"
+            component={TabContainer}
+            layout={DashboardLayout}
+          /> */}
           {/* <Route path="/dashboard" component={TabContainer} /> */}
         </Switch>
       </div>
