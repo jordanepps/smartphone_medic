@@ -3,6 +3,7 @@ import Login from '../../components/TabDisplay/Login';
 import Signup from '../../components/TabDisplay/Signup';
 import { Flash } from '../../components/Utils/Utils';
 import AuthApiService from '../../services/auth-api-service';
+import TokenService from '../../services/token-service';
 import './SignupLogin.css';
 
 export default function TabContainer() {
@@ -31,7 +32,15 @@ export default function TabContainer() {
 
   const handleLoginSubmit = data => {
     AuthApiService.loginUser(data)
-      .then(res => console.log(res, 'RES'))
+      .then(res => {
+        const { status, data } = res;
+        if (status >= 400) {
+          handleFlash(data.error, 'danger');
+        } else {
+          console.log(res);
+          TokenService.saveAuthToken(data.token);
+        }
+      })
       .catch(err => console.log(err, 'ERR'));
   };
 
