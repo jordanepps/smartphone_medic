@@ -49,10 +49,24 @@ authRouter.post('/', (req, res, next) => {
   });
 });
 
-authRouter.get('/user', requireAuth, (req, res, next) => {
+authRouter.get('/user', requireAuth, (req, res) => {
   User.findById(req.user.id)
     .select('-password')
     .then(user => res.json(user));
+});
+
+authRouter.get('/refresh', requireAuth, (req, res) => {
+  jwt.sign(
+    { id: req.user.id },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.EXPIRY
+    },
+    (err, token) => {
+      if (err) throw err;
+      res.json({ token });
+    }
+  );
 });
 
 module.exports = authRouter;
