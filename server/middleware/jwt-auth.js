@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 function requireAuth(req, res, next) {
   const token = req.header('x-auth-token');
   //Check for token
-  if (!token) res.status(401).json({ error: 'Unauthorized Request' });
+  if (!token) return res.status(401).json({ error: 'Unauthorized Request' });
 
   try {
     //Verify token
@@ -17,4 +17,4 @@ function requireAuth(req, res, next) {
   }
 }
 
-module.exports = { requireAuth };
+module.exports = requireAuth;

@@ -2,6 +2,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const User = require('../../models/user.model');
+const requireAuth = require('../../middleware/jwt-auth');
 
 const authRouter = express.Router();
 
@@ -46,6 +47,12 @@ authRouter.post('/', (req, res, next) => {
 
     //verify user
   });
+});
+
+authRouter.get('/user', requireAuth, (req, res, next) => {
+  User.findById(req.user.id)
+    .select('-password')
+    .then(user => res.json(user));
 });
 
 module.exports = authRouter;
