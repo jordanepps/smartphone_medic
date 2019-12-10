@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const express = require('express');
 const User = require('../../models/user.model');
 const requireAuth = require('../../middleware/jwt-auth');
+const AuthService = require('./auth.service');
 
 const authRouter = express.Router();
 
@@ -56,17 +57,7 @@ authRouter.get('/user', requireAuth, (req, res) => {
 });
 
 authRouter.get('/refresh', requireAuth, (req, res) => {
-  jwt.sign(
-    { id: req.user.id },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: process.env.EXPIRY
-    },
-    (err, token) => {
-      if (err) throw err;
-      res.json({ token });
-    }
-  );
+  AuthService.createToken(req.user.id, res);
 });
 
 module.exports = authRouter;
