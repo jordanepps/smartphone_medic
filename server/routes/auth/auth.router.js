@@ -1,5 +1,3 @@
-require('dotenv').config();
-const jwt = require('jsonwebtoken');
 const express = require('express');
 const User = require('../../models/user.model');
 const requireAuth = require('../../middleware/jwt-auth');
@@ -23,30 +21,19 @@ authRouter.post('/', (req, res, next) => {
     if (!user)
       return res.status(400).json({ error: 'User account does not exist' });
 
-    //Check if account is deleted
     //Check password
     if (!user.validPassword(password)) {
       return res.status(400).json({ error: 'Password is incorrect' });
     } else {
-      jwt.sign(
-        { id: user.id },
-        process.env.JWT_SECRET,
-        {
-          expiresIn: process.env.EXPIRY
-        },
-        (err, token) => {
-          //TODO: Handle error
-          if (err) throw err;
-          req.flash('success', 'Login Successfully!');
+      AuthService.createToken(user.id)
+        .then(token =>
           res.status(200).json({
             token,
             user: { id: user.id, name: user.name, email: user.email }
-          });
-        }
-      );
+          })
+        )
+        .catch(err => console.log(err));
     }
-
-    //verify user
   });
 });
 
@@ -57,7 +44,7 @@ authRouter.get('/user', requireAuth, (req, res) => {
 });
 
 authRouter.get('/refresh', requireAuth, (req, res) => {
-  AuthService.create(req.user.id)
+  AuthService.createToken(req.user.id)
     .then(token => res.json({ token }))
     .catch(err => console.log(err));
 });
