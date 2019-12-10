@@ -1,6 +1,3 @@
-require('dotenv').config();
-const jwt = require('jsonwebtoken');
-
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/;
 //TODO:Refactor to single function if no other methods are needed
 const UserService = {
