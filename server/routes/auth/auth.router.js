@@ -57,7 +57,9 @@ authRouter.get('/user', requireAuth, (req, res) => {
 });
 
 authRouter.get('/refresh', requireAuth, (req, res) => {
-  AuthService.createToken(req.user.id, res);
+  AuthService.create(req.user.id)
+    .then(token => res.json({ token }))
+    .catch(err => console.log(err));
 });
 
 module.exports = authRouter;
