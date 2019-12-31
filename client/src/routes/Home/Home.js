@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import HomeCardContainer from '../../components/HomeCardContainer/HomeCardContainer';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           </span>
         </div>
       </div>
+      <HomeCardContainer />
     </div>
   );
 }
