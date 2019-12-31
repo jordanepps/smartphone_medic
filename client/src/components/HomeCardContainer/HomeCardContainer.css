@@ -1,0 +1,9 @@
+.home-card-container {
+    margin: 25px auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    max-width: 1000px;
+}
