@@ -1,12 +1,12 @@
 import React from 'react';
 import './HomeCardContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faMobile, faTools, faAward } from '@fortawesome/free-solid-svg-icons';
 
-function HomeCard() {
+function HomeCard({ icon }) {
   return (
     <div className="home-card">
-      <FontAwesomeIcon icon={faCoffee} />
+      <FontAwesomeIcon icon={icon} />
       <h4 className="card-title">Test Message</h4>
       <p className="card-body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolorum
@@ -19,9 +19,9 @@ function HomeCard() {
 export default function HomeCardContainer() {
   return (
     <div className="home-card-container">
-      <HomeCard />
-      <HomeCard />
-      <HomeCard />
+      <HomeCard icon={faMobile} />
+      <HomeCard icon={faTools} />
+      <HomeCard icon={faAward} />
     </div>
   );
 }
