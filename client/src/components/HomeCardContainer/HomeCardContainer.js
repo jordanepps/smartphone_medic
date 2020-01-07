@@ -19,9 +19,9 @@ function HomeCard({ icon, title }) {
 export default function HomeCardContainer() {
   return (
     <div className="home-card-container">
-      <HomeCard icon={faMobile} title="Repairs on most phones an tablets" />
-      <HomeCard icon={faTools} title="90 Day Warranty*" />
       <HomeCard icon={faAward} title="Award Winning Service" />
+      <HomeCard icon={faMobile} title="Repairs Something" />
+      <HomeCard icon={faTools} title="90 Day Warranty*" />
     </div>
   );
 }
